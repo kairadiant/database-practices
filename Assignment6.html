@@ -1,0 +1,141 @@
+<html><head><meta name="description" content="OutputUtil developed by LT. Executed by C:\Users\Kayla\PycharmProjects\CSCI331">
+<style>body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    color: purple;
+    text-align: center;
+}
+h3 {
+    color: purple;
+}
+.vericaltext {
+ writing-mode: vertical-lr;
+ text-orientation: upright;
+}
+
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+    vertical-align: top
+}
+th > a {
+    color: lavender;
+}
+th {
+    background-color: purple;
+    color: lavender;
+}
+tr:nth-child(even) {
+    background-color: lavender;
+}
+tr:nth-child(odd) {
+    background-color: plum;
+}</style>
+<script>
+function sortTable(tableId, colNum, colType) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
+  table = document.getElementById(tableId);
+  switching = true;
+  dir = "asc";
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[colNum];
+      y = rows[i + 1].getElementsByTagName("td")[colNum];
+      if (colType == 'N') { 
+        if (((dir == "asc") && (Number(x.innerHTML) > Number(y.innerHTML))) ||
+            ((dir == "desc") && (Number(x.innerHTML) < Number(y.innerHTML)))) {
+          shouldSwitch = true;
+          break;
+        }
+      } else {
+        if (((dir == "asc") && (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase())) ||
+            ((dir == "desc") && (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()))) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchCount ++;
+    } else {
+     if (switchCount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+</head>
+<body><h1>ALL queries for 'Assignment 6'</h1>
+<h3>Table of Contents</h3>
+<ol><li><a href="#table-Compute-total-grade-points-for-student-X">Compute total grade points for student X</a>
+</li>
+<li><a href="#table-Compute-GPA-for-student-X">Compute GPA for student X</a>
+</li>
+</ol>
+<h3>Compute total grade points for student X</h3>
+<table id="table-Compute-total-grade-points-for-student-X" style="width:100%"><th><a href="javascript:sortTable('table-Compute-total-grade-points-for-student-X', 0, 'N')"">total_grade_points</a>
+</th>
+<tr><td style="text-align:right;">0.0</td>
+</tr>
+<tr><td style="text-align:right;"><b>1</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+</table>
+<h3>Compute GPA for student X</h3>
+<table id="table-Compute-GPA-for-student-X" style="width:100%"><th><a href="javascript:sortTable('table-Compute-GPA-for-student-X', 0, 'N')"">gpa</a>
+</th>
+<tr><td style="text-align:right;">0.0</td>
+</tr>
+<tr><td style="text-align:right;"><b>1</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+<tr><td style="text-align:right;"><b>0.0</b>
+</td>
+</tr>
+</table>
+<center><h6>&copy;2024 by Developer • Generated on Jan. 15, 2024 01:00 AM</h6>
+</center>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<html><head><meta name="description" content="OutputUtil developed by LT. Executed by C:\Users\Kayla\PycharmProjects\CSCI331">
+<style>body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    color: purple;
+    text-align: center;
+}
+h3 {
+    color: purple;
+}
+.vericaltext {
+ writing-mode: vertical-lr;
+ text-orientation: upright;
+}
+
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+    vertical-align: top
+}
+th > a {
+    color: lavender;
+}
+th {
+    background-color: purple;
+    color: lavender;
+}
+tr:nth-child(even) {
+    background-color: lavender;
+}
+tr:nth-child(odd) {
+    background-color: plum;
+}</style>
+<script>
+function sortTable(tableId, colNum, colType) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
+  table = document.getElementById(tableId);
+  switching = true;
+  dir = "asc";
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[colNum];
+      y = rows[i + 1].getElementsByTagName("td")[colNum];
+      if (colType == 'N') { 
+        if (((dir == "asc") && (Number(x.innerHTML) > Number(y.innerHTML))) ||
+            ((dir == "desc") && (Number(x.innerHTML) < Number(y.innerHTML)))) {
+          shouldSwitch = true;
+          break;
+        }
+      } else {
+        if (((dir == "asc") && (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase())) ||
+            ((dir == "desc") && (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()))) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchCount ++;
+    } else {
+     if (switchCount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+</head>
+<body><h1>All queries for 'Assignment12'</h1>
+<h3>Table of Contents</h3>
+<ol><li><a href="#table-Select-all-queries-using-IN-clause-without-Index">Select all queries using IN clause without Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-OR-clause-without-Index">Select all queries using OR clause without Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-LIKE-Clause-without-Index">Select all queries using LIKE Clause without Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-UNION-Clause-without-Index">Select all queries using UNION Clause without Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-IN-clause-with-Index">Select all queries using IN clause with Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-OR-clause-with-Index">Select all queries using OR clause with Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-LIKE-Clause-with-Index">Select all queries using LIKE Clause with Index</a>
+</li>
+<li><a href="#table-Select-all-queries-using-UNION-Clause-with-Index">Select all queries using UNION Clause with Index</a>
+</li>
+<li><a href="#table-Find-queries-associated-with-this-assignment">Find queries associated with this assignment</a>
+</li>
+</ol>
+<h3>Select all queries using IN clause without Index</h3>
+<table id="table-Select-all-queries-using-IN-clause-without-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-IN-clause-without-Index', 0, 'N')"">count</a>
+</th>
+<tr><td style="text-align:right;">427</td>
+</tr>
+</table>
+<h3>Select all queries using OR clause without Index</h3>
+<table id="table-Select-all-queries-using-OR-clause-without-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-OR-clause-without-Index', 0, 'N')"">count</a>
+</th>
+<tr><td style="text-align:right;">427</td>
+</tr>
+</table>
+<h3>Select all queries using LIKE Clause without Index</h3>
+<table id="table-Select-all-queries-using-LIKE-Clause-without-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-LIKE-Clause-without-Index', 0, 'N')"">count</a>
+</th>
+<tr><td style="text-align:right;">1444</td>
+</tr>
+</table>
+<h3>Select all queries using UNION Clause without Index</h3>
+<table id="table-Select-all-queries-using-UNION-Clause-without-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-UNION-Clause-without-Index', 0, 'S')"">count</a>
+</th>
+<tr><td style="text-align:left;">427</td>
+</tr>
+</table>
+<h3>Select all queries using IN clause with Index</h3>
+<table id="table-Select-all-queries-using-IN-clause-with-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-IN-clause-with-Index', 0, 'N')"">count</a>
+</th>
+<tr><td style="text-align:right;">427</td>
+</tr>
+</table>
+<h3>Select all queries using OR clause with Index</h3>
+<table id="table-Select-all-queries-using-OR-clause-with-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-OR-clause-with-Index', 0, 'N')"">count</a>
+</th>
+<tr><td style="text-align:right;">427</td>
+</tr>
+</table>
+<h3>Select all queries using LIKE Clause with Index</h3>
+<table id="table-Select-all-queries-using-LIKE-Clause-with-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-LIKE-Clause-with-Index', 0, 'N')"">count</a>
+</th>
+<tr><td style="text-align:right;">1444</td>
+</tr>
+</table>
+<h3>Select all queries using UNION Clause with Index</h3>
+<table id="table-Select-all-queries-using-UNION-Clause-with-Index" style="width:100%"><th><a href="javascript:sortTable('table-Select-all-queries-using-UNION-Clause-with-Index', 0, 'S')"">count</a>
+</th>
+<tr><td style="text-align:left;">427</td>
+</tr>
+</table>
+<h3>Find queries associated with this assignment</h3>
+<table id="table-Find-queries-associated-with-this-assignment" style="width:100%"><th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 0, 'N')"">query_id</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 1, 'S')"">query_text</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 2, 'S')"">query_desc</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 3, 'S')"">query_db</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 4, 'N')"">query_rows</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 5, 'S')"">query_user</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 6, 'S')"">query_assn</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 7, 'S')"">query_dur</a>
+</th>
+<th><a href="javascript:sortTable('table-Find-queries-associated-with-this-assignment', 8, 'S')"">query_ended</a>
+</th>
+<tr><td style="text-align:right;">2151</td>
+<td style="text-align:left;">Select sum(c) as count From
+(Select count(*) as c From query where query_assn = 'Assignment3'
+union
+Select count(*) as c From query where query_assn = 'Assignment4'
+union
+Select count(*) as c From query where query_assn = 'Assignment5'
+union
+Select count(*) as c From query where query_assn = 'Assignment6'
+union
+Select count(*) as c From query where query_assn = 'Assignment7'
+union
+Select count(*) as c From query where query_assn = 'Assignment8'
+union
+Select count(*) as c From query where query_assn = 'Assignment9'
+union
+Select count(*) as c From query where query_assn = 'Assignment10'
+union
+Select count(*) as c From query where query_assn = 'Assignment11')
+as counts </td>
+<td style="text-align:left;">Select all queries using UNION Clause with Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0042</td>
+<td style="text-align:left;">2024-01-20 20:39:07</td>
+</tr>
+<tr><td style="text-align:right;">2150</td>
+<td style="text-align:left;">Select count(*) as count From query where query_assn like 'Assignment %' </td>
+<td style="text-align:left;">Select all queries using LIKE Clause with Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0011</td>
+<td style="text-align:left;">2024-01-20 20:39:07</td>
+</tr>
+<tr><td style="text-align:right;">2149</td>
+<td style="text-align:left;">Select count(*) as count From query where
+query_assn = 'Assignment3' or
+query_assn = 'Assignment4' or
+query_assn = 'Assignment5' or
+query_assn = 'Assignment6' or
+query_assn = 'Assignment7' or
+query_assn = 'Assignment8' or
+query_assn = 'Assignment9' or
+query_assn = 'Assignment10' or
+query_assn = 'Assignment11' </td>
+<td style="text-align:left;">Select all queries using OR clause with Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-20 20:39:07</td>
+</tr>
+<tr><td style="text-align:right;">2148</td>
+<td style="text-align:left;">Select count(*) as count From query where query_assn in
+('Assignment3','Assignment4','Assignment5','Assignment6','Assignment7',
+ 'Assignment8', 'Assignment9', 'Assignment10', 'Assignment11') </td>
+<td style="text-align:left;">Select all queries using IN clause with Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-20 20:39:07</td>
+</tr>
+<tr><td style="text-align:right;">2143</td>
+<td style="text-align:left;">Select count(*) as count From query where query_assn in
+('Assignment3','Assignment4','Assignment5','Assignment6','Assignment7',
+ 'Assignment8', 'Assignment9', 'Assignment10', 'Assignment11') </td>
+<td style="text-align:left;">Select all queries using IN clause without Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0037</td>
+<td style="text-align:left;">2024-01-20 20:39:06</td>
+</tr>
+<tr><td style="text-align:right;">2147</td>
+<td style="text-align:left;">CREATE INDEX idx_query_assignment ON query (query_assn) </td>
+<td style="text-align:left;">Create Index on query table</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">0</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0493</td>
+<td style="text-align:left;">2024-01-20 20:39:06</td>
+</tr>
+<tr><td style="text-align:right;">2146</td>
+<td style="text-align:left;">Select sum(c) as count From
+(Select count(*) as c From query where query_assn = 'Assignment3'
+union
+Select count(*) as c From query where query_assn = 'Assignment4'
+union
+Select count(*) as c From query where query_assn = 'Assignment5'
+union
+Select count(*) as c From query where query_assn = 'Assignment6'
+union
+Select count(*) as c From query where query_assn = 'Assignment7'
+union
+Select count(*) as c From query where query_assn = 'Assignment8'
+union
+Select count(*) as c From query where query_assn = 'Assignment9'
+union
+Select count(*) as c From query where query_assn = 'Assignment10'
+union
+Select count(*) as c From query where query_assn = 'Assignment11')
+as counts </td>
+<td style="text-align:left;">Select all queries using UNION Clause without Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0117</td>
+<td style="text-align:left;">2024-01-20 20:39:06</td>
+</tr>
+<tr><td style="text-align:right;">2145</td>
+<td style="text-align:left;">Select count(*) as count From query where query_assn like 'Assignment %' </td>
+<td style="text-align:left;">Select all queries using LIKE Clause without Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-20 20:39:06</td>
+</tr>
+<tr><td style="text-align:right;">2144</td>
+<td style="text-align:left;">Select count(*) as count From query where
+query_assn = 'Assignment3' or
+query_assn = 'Assignment4' or
+query_assn = 'Assignment5' or
+query_assn = 'Assignment6' or
+query_assn = 'Assignment7' or
+query_assn = 'Assignment8' or
+query_assn = 'Assignment9' or
+query_assn = 'Assignment10' or
+query_assn = 'Assignment11' </td>
+<td style="text-align:left;">Select all queries using OR clause without Index</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">1</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0030</td>
+<td style="text-align:left;">2024-01-20 20:39:06</td>
+</tr>
+<tr><td style="text-align:right;">2142</td>
+<td style="text-align:left;">ALTER TABLE query
+DROP INDEX idx_query_assignment </td>
+<td style="text-align:left;">Drop Index on query table</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:right;">0</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment12</td>
+<td style="text-align:left;">0.0340</td>
+<td style="text-align:left;">2024-01-20 20:39:06</td>
+</tr>
+</table>
+<center><h6>&copy;2024 by Developer • Generated on Jan. 20, 2024 20:39 PM</h6>
+</center>
+</body>
+</html>

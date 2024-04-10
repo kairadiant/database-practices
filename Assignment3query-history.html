@@ -1,0 +1,1326 @@
+<html><head><meta name="description" content="OutputUtil developed by LT. Executed by C:\Users\Kayla\PycharmProjects\CSCI331">
+<style>body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    color: purple;
+    text-align: center;
+}
+h3 {
+    color: purple;
+}
+.vericaltext {
+ writing-mode: vertical-lr;
+ text-orientation: upright;
+}
+
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+    vertical-align: top
+}
+th > a {
+    color: lavender;
+}
+th {
+    background-color: purple;
+    color: lavender;
+}
+tr:nth-child(even) {
+    background-color: lavender;
+}
+tr:nth-child(odd) {
+    background-color: plum;
+}</style>
+<script>
+function sortTable(tableId, colNum, colType) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
+  table = document.getElementById(tableId);
+  switching = true;
+  dir = "asc";
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[colNum];
+      y = rows[i + 1].getElementsByTagName("td")[colNum];
+      if (colType == 'N') { 
+        if (((dir == "asc") && (Number(x.innerHTML) > Number(y.innerHTML))) ||
+            ((dir == "desc") && (Number(x.innerHTML) < Number(y.innerHTML)))) {
+          shouldSwitch = true;
+          break;
+        }
+      } else {
+        if (((dir == "asc") && (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase())) ||
+            ((dir == "desc") && (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()))) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchCount ++;
+    } else {
+     if (switchCount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+</head>
+<body><h1>ALL queries for to date</h1>
+<h3>Table of Contents</h3>
+<ol><li><a href="#table-retrieve-all-queries-executed-for-Assignment-3">retrieve all queries executed for Assignment 3</a>
+</li>
+</ol>
+<h3>retrieve all queries executed for Assignment 3</h3>
+<table id="table-retrieve-all-queries-executed-for-Assignment-3" style="width:100%"><th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 0, 'S')"">query_id</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 1, 'S')"">query_text</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 2, 'S')"">query_desc</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 3, 'S')"">query_db</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 4, 'S')"">query_rows</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 5, 'S')"">query_user</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 6, 'S')"">query_assn</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 7, 'S')"">query_dur</a>
+</th>
+<th><a href="javascript:sortTable('table-retrieve-all-queries-executed-for-Assignment-3', 8, 'S')"">query_ended</a>
+</th>
+<tr><td style="text-align:left;">1</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0016</td>
+<td style="text-align:left;">2024-01-10 00:31:46</td>
+</tr>
+<tr><td style="text-align:left;">2</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0060</td>
+<td style="text-align:left;">2024-01-10 00:31:46</td>
+</tr>
+<tr><td style="text-align:left;">3</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0030</td>
+<td style="text-align:left;">2024-01-10 00:31:46</td>
+</tr>
+<tr><td style="text-align:left;">4</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0025</td>
+<td style="text-align:left;">2024-01-10 00:31:46</td>
+</tr>
+<tr><td style="text-align:left;">5</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">6</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0030</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">7</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">6</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0014</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">8</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0023</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">9</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">10</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0017</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">11</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0018</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">12</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0012</td>
+<td style="text-align:left;">2024-01-10 00:31:47</td>
+</tr>
+<tr><td style="text-align:left;">13</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">14</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">15</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0040</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">16</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">17</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">18</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">19</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">18</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">20</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0005</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">21</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0011</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">22</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">23</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">24</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0016</td>
+<td style="text-align:left;">2024-01-10 00:34:23</td>
+</tr>
+<tr><td style="text-align:left;">25</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0018</td>
+<td style="text-align:left;">2024-01-10 00:40:39</td>
+</tr>
+<tr><td style="text-align:left;">26</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">27</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">28</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0030</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">29</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">30</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">31</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">32</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">31</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0037</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">33</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">34</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">35</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0013</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">36</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0024</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">37</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:41:03</td>
+</tr>
+<tr><td style="text-align:left;">40</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0025</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">41</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0053</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">42</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">43</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">44</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0018</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">45</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">46</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">45</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0024</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">47</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">48</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">49</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0024</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">50</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">51</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0009</td>
+<td style="text-align:left;">2024-01-10 00:58:02</td>
+</tr>
+<tr><td style="text-align:left;">52</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0040</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">53</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0013</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">54</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">55</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0011</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">56</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">57</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">58</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">57</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0023</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">59</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0029</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">60</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">61</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0042</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">62</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">63</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0011</td>
+<td style="text-align:left;">2024-01-10 01:00:20</td>
+</tr>
+<tr><td style="text-align:left;">447</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0021</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">448</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0028</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">449</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0014</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">450</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0013</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">451</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0014</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">452</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">453</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">452</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0082</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">454</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">455</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">456</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">457</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">458</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 02:58:52</td>
+</tr>
+<tr><td style="text-align:left;">459</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0014</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">460</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0022</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">461</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0036</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">462</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0012</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">463</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">464</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">465</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">464</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0081</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">466</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0030</td>
+<td style="text-align:left;">2024-01-10 02:58:59</td>
+</tr>
+<tr><td style="text-align:left;">467</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0013</td>
+<td style="text-align:left;">2024-01-10 02:59:00</td>
+</tr>
+<tr><td style="text-align:left;">468</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0013</td>
+<td style="text-align:left;">2024-01-10 02:59:00</td>
+</tr>
+<tr><td style="text-align:left;">469</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0023</td>
+<td style="text-align:left;">2024-01-10 02:59:00</td>
+</tr>
+<tr><td style="text-align:left;">470</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0017</td>
+<td style="text-align:left;">2024-01-10 02:59:00</td>
+</tr>
+<tr><td style="text-align:left;">471</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0023</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">472</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0014</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">473</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0011</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">474</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">475</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">476</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0018</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">477</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">476</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0077</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">478</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0011</td>
+<td style="text-align:left;">2024-01-10 03:02:55</td>
+</tr>
+<tr><td style="text-align:left;">479</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 03:02:56</td>
+</tr>
+<tr><td style="text-align:left;">480</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0032</td>
+<td style="text-align:left;">2024-01-10 03:02:56</td>
+</tr>
+<tr><td style="text-align:left;">481</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0005</td>
+<td style="text-align:left;">2024-01-10 03:02:56</td>
+</tr>
+<tr><td style="text-align:left;">482</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 03:02:56</td>
+</tr>
+<tr><td style="text-align:left;">490</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0031</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">491</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0022</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">492</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0020</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">493</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0042</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">494</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">495</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">496</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">495</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0107</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">497</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">498</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0022</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">499</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0013</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">500</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0021</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">501</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 03:04:45</td>
+</tr>
+<tr><td style="text-align:left;">508</td>
+<td style="text-align:left;">select *
+from query</td>
+<td style="text-align:left;">Query Logs for Assignment</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">507</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0106</td>
+<td style="text-align:left;">2024-01-10 03:06:00</td>
+</tr>
+<tr><td style="text-align:left;">509</td>
+<td style="text-align:left;">SELECT * FROM advisor</td>
+<td style="text-align:left;">Retrieve all rows table advisor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0034</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">510</td>
+<td style="text-align:left;">SELECT * FROM classroom</td>
+<td style="text-align:left;">Retrieve all rows table classroom</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0046</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">511</td>
+<td style="text-align:left;">SELECT * FROM course</td>
+<td style="text-align:left;">Retrieve all rows table course</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0025</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">512</td>
+<td style="text-align:left;">SELECT * FROM department</td>
+<td style="text-align:left;">Retrieve all rows table department</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0027</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">513</td>
+<td style="text-align:left;">SELECT * FROM instructor</td>
+<td style="text-align:left;">Retrieve all rows table instructor</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0040</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">514</td>
+<td style="text-align:left;">SELECT * FROM prereq</td>
+<td style="text-align:left;">Retrieve all rows table prereq</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0015</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">515</td>
+<td style="text-align:left;">SELECT * FROM query</td>
+<td style="text-align:left;">Retrieve all rows table query</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">514</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0088</td>
+<td style="text-align:left;">2024-01-10 03:10:39</td>
+</tr>
+<tr><td style="text-align:left;">516</td>
+<td style="text-align:left;">SELECT * FROM section</td>
+<td style="text-align:left;">Retrieve all rows table section</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0024</td>
+<td style="text-align:left;">2024-01-10 03:10:40</td>
+</tr>
+<tr><td style="text-align:left;">517</td>
+<td style="text-align:left;">SELECT * FROM student</td>
+<td style="text-align:left;">Retrieve all rows table student</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0015</td>
+<td style="text-align:left;">2024-01-10 03:10:40</td>
+</tr>
+<tr><td style="text-align:left;">518</td>
+<td style="text-align:left;">SELECT * FROM takes</td>
+<td style="text-align:left;">Retrieve all rows table takes</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0000</td>
+<td style="text-align:left;">2024-01-10 03:10:40</td>
+</tr>
+<tr><td style="text-align:left;">519</td>
+<td style="text-align:left;">SELECT * FROM teaches</td>
+<td style="text-align:left;">Retrieve all rows table teaches</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0010</td>
+<td style="text-align:left;">2024-01-10 03:10:40</td>
+</tr>
+<tr><td style="text-align:left;">520</td>
+<td style="text-align:left;">SELECT * FROM time_slot</td>
+<td style="text-align:left;">Retrieve all rows table time_slot</td>
+<td style="text-align:left;">udb</td>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">Kayla</td>
+<td style="text-align:left;">Assignment 3</td>
+<td style="text-align:left;">0.0026</td>
+<td style="text-align:left;">2024-01-10 03:10:40</td>
+</tr>
+</table>
+<center><h6>&copy;2024 by Developer • Generated on Jan. 11, 2024 23:53 PM</h6>
+</center>
+</body>
+</html>
